@@ -29,10 +29,11 @@ export class EmployeeUpdateComponent {
 
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required]),
-      fullname: new FormControl('', Validators.required),
+      firtsName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      birthdate: new FormControl('', Validators.required),
-      salary: new FormControl('', Validators.required),
+      birthDate: new FormControl('', Validators.required),
+      basicSalary: new FormControl('', Validators.required),
       status: new FormControl('', Validators.required),
       group: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)

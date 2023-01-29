@@ -11,6 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 const routes : Routes = [
   {
     path:'',
@@ -39,7 +44,10 @@ const routes : Routes = [
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-    SharedModule
+    SharedModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ]
 })
 export class EmployeeModule { }

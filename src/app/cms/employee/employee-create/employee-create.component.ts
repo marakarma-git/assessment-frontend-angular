@@ -11,6 +11,9 @@ import { EmployeeService } from 'src/app/shared/services/employee.service';
 export class EmployeeCreateComponent {
 
   form!:FormGroup;
+  groupList: any;
+  statusList: any;
+  selectedValue: any;
 
   constructor(
     public employeeService: EmployeeService,
@@ -18,12 +21,22 @@ export class EmployeeCreateComponent {
   ){ }
 
   ngOnInit(): void {
+
+    this.employeeService.getGroup().subscribe((data:any)=>{
+      this.groupList = data;
+    })
+
+    this.employeeService.getStatus().subscribe((data:any)=>{
+      this.statusList = data;
+    })
+
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required]),
-      fullname: new FormControl('', Validators.required),
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      birthdate: new FormControl('', Validators.required),
-      salary: new FormControl('', Validators.required),
+      birthDate: new FormControl('', Validators.required),
+      basicSalary: new FormControl('', Validators.required),
       status: new FormControl('', Validators.required),
       group: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
@@ -40,6 +53,16 @@ export class EmployeeCreateComponent {
          console.log('Employee created successfully!');
          this.router.navigateByUrl('employee/index');
     })
+  }
+
+  changeGroup(e:any){
+    console.log(e.target.value)
+    this.selectedValue=e.terget.value;
+  }
+
+  changeStatus(e:any){
+    console.log(e.target.value)
+    this.selectedValue=e.terget.value;
   }
 
 }

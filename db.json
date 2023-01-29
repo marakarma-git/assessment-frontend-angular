@@ -20,14 +20,27 @@
   "employees": [
     {
       "username": "marakarma",
-      "fullname": "Mara Karma",
+      "firstName": "Mara",
+      "lastName": "Karma",
       "email": "marakarma36@gmail.com",
-      "birthdate": "17/Feb/1995",
-      "salary": "15.000.000",
+      "birthDate": "1995-02-17",
+      "basicSalary": 10000000,
       "status": "contract",
-      "group": "IT Developer",
+      "group": "Talent Accusition",
       "description": "description",
       "id": 1
+    },
+    {
+      "username": "riniperdana",
+      "firstName": "Rini",
+      "lastName": "Perdana",
+      "email": "riniperdana@gmail.com",
+      "birthDate": "1994-02-09",
+      "basicSalary": 12000000,
+      "status": "contract",
+      "group": "Finance",
+      "description": "description",
+      "id": 2
     }
   ],
   "sales": [
@@ -65,6 +78,47 @@
       "year": 2021,
       "amount": 17000,
       "colorcode": "pink"
+    }
+  ],
+  "group":[
+    {
+      "id": 1,
+      "groupname": "Project Manager"
+    },
+    {
+      "id": 2,
+      "groupname": "Team Lead"
+    },
+    {
+      "id": 3,
+      "groupname": "Recruiter"
+    },
+    {
+      "id": 4,
+      "groupname": "Finance"
+    },
+    {
+      "id": 5,
+      "groupname": "IT Developer"
+    },
+    {
+      "id": 6,
+      "groupname": "General Affair"
+    }
+  ],
+
+  "status":[
+    {
+      "id": 1,
+      "statusName": "Contract"
+    },
+    {
+      "id": 2,
+      "statusName": "Permanent"
+    },
+    {
+      "id": 3,
+      "statusName": "Freelance"
     }
   ]
 }

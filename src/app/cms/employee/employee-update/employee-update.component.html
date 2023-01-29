@@ -37,10 +37,18 @@
               </div>
 
               <div class="form-group mb-3">
-                <label class="col-form-label">Fullname</label>
-                <input type="text" class="form-control shadow" formControlName="fullname" [(ngModel)]="employee.fullname"/>
-                <div *ngIf="f['fullname'].touched && f['fullname'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['fullname'].errors && f['fullname'].errors['required']">Fullname is required.</div>
+                <label class="col-form-label">First Name</label>
+                <input type="text" class="form-control shadow" formControlName="firstName" [(ngModel)]="employee.firstName"/>
+                <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger mt-2">
+                  <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">First Name is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="col-form-label">Last Name</label>
+                <input type="text" class="form-control shadow" formControlName="lastName" [(ngModel)]="employee.lastName"/>
+                <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger mt-2">
+                  <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required.</div>
                 </div>
               </div>
 
@@ -54,9 +62,9 @@
 
               <div class="form-group mb-3">
                 <label class="col-form-label">Birthdate</label>
-                <input type="date" class="form-control shadow" formControlName="birthdate" [(ngModel)]="employee.birthdate"/>
-                <div *ngIf="f['birthdate'].touched && f['birthdate'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['birthdate'].errors && f['birthdate'].errors['required']">Birthdate is required.</div>
+                <input type="date" class="form-control shadow" formControlName="birthDate" [(ngModel)]="employee.birthDate"/>
+                <div *ngIf="f['birthDate'].touched && f['birthDate'].invalid" class="alert alert-danger mt-2">
+                  <div *ngIf="f['birthDate'].errors && f['birthDate'].errors['required']">Birthdate is required.</div>
                 </div>
               </div>
 
@@ -65,10 +73,10 @@
             <div class="col-lg-6 mb-3">
 
               <div class="form-group mb-3">
-                <label class="col-form-label">Salary</label>
-                <input type="number" class="form-control shadow" formControlName="salary" [(ngModel)]="employee.salary" />
-                <div *ngIf="f['salary'].touched && f['salary'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['salary'].errors && f['salary'].errors['required']">Salary is required.</div>
+                <label class="col-form-label">Basic Salary</label>
+                <input type="number" class="form-control shadow" formControlName="basicSalary" [(ngModel)]="employee.basicSalary" />
+                <div *ngIf="f['basicSalary'].touched && f['basicSalary'].invalid" class="alert alert-danger mt-2">
+                  <div *ngIf="f['basicSalary'].errors && f['basicSalary'].errors['required']">Basic Salary is required.</div>
                 </div>
               </div>
 

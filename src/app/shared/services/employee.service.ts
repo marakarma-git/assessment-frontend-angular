@@ -69,4 +69,21 @@ export class EmployeeService {
     )
   }
 
+
+
+  getGroup(): Observable<any>{
+    return this.httpClient.get(this.apiURL + '/group/')
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  getStatus(): Observable<any>{
+    return this.httpClient.get(this.apiURL + '/status/')
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+
 }

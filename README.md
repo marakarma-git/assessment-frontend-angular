@@ -1,6 +1,15 @@
-# AngularComplete
+# Assessment-Frontend-Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+
+## Screenshoots
+1. Login
+ - 
+
+
+## How To run
+
+
 
 ## Development server
 
