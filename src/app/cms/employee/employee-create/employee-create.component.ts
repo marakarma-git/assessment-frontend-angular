@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/shared/services/employee.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-employee-create',
@@ -15,12 +16,16 @@ export class EmployeeCreateComponent {
   statusList: any;
   selectedValue: any;
 
+
   constructor(
     public employeeService: EmployeeService,
-    private router :Router
+    private router :Router,
+    private currencyPipe: CurrencyPipe
   ){ }
 
   ngOnInit(): void {
+
+
 
     this.employeeService.getGroup().subscribe((data:any)=>{
       this.groupList = data;
@@ -41,6 +46,15 @@ export class EmployeeCreateComponent {
       group: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
     });
+
+
+    this.form.valueChanges.subscribe(form =>{
+      if(form.basicSalary){
+        this.form.patchValue({
+          basicSalary: this.currencyPipe.transform(form.basicSalary.replace(/\D/g, '').replace(/^0+/, ''), ' Rp', 'symbol', '1.0-0')
+        }, {emitEvent: false});
+      }
+    });
   }
 
   get f(){
@@ -50,6 +64,7 @@ export class EmployeeCreateComponent {
   submit(){
     console.log(this.form.value);
     this.employeeService.create(this.form.value).subscribe((res:any) => {
+         alert('Employee created successfully!');
          console.log('Employee created successfully!');
          this.router.navigateByUrl('employee/index');
     })

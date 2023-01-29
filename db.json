@@ -9,20 +9,20 @@
       "id": 1
     },
     {
-      "fullname": "Administrator",
-      "username": "admin",
-      "mobile": 8121234243,
-      "email": "admin@gmail.com",
-      "password": "12345",
-      "id": 2
-    },
-    {
       "fullname": "Rini Perdana",
       "username": "riniperdana",
       "mobile": 81217483285,
       "email": "rini@gmail.com",
       "password": "12345",
       "id": 3
+    },
+    {
+      "fullname": "Administrator",
+      "username": "admin",
+      "mobile": 81254673612,
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ],
   "employees": [
@@ -32,23 +32,11 @@
       "lastName": "Karma",
       "email": "marakarma36@gmail.com",
       "birthDate": "1995-02-17",
-      "basicSalary": 10000000,
+      "basicSalary": "Rp10,000,000",
       "status": "contract",
       "group": "Talent Accusition",
       "description": "description",
       "id": 1
-    },
-    {
-      "username": "riniperdana",
-      "firstName": "Rini",
-      "lastName": "Perdana",
-      "email": "riniperdana@gmail.com",
-      "birthDate": "1994-02-09",
-      "basicSalary": 12000000,
-      "status": "contract",
-      "group": "Finance",
-      "description": "description",
-      "id": 2
     }
   ],
   "sales": [

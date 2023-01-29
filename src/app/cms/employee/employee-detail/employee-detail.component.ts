@@ -24,7 +24,7 @@ export class EmployeeDetailComponent {
 
 
    ngOnInit(): void {
-    this.id = this.route.snapshot.params['employeeId'];
+    this.id = this.route.snapshot.params['id'];
     this.employeeService.find(this.id).subscribe((data: EmployeeModel)=>{
       this.employee = data;
     });

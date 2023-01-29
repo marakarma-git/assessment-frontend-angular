@@ -7,7 +7,7 @@
       </div>
       <div class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/employee/index">Employee</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+        <li class="breadcrumb-item active" aria-current="page">Update</li>
       </div>
     </ol>
   </nav>
@@ -67,7 +67,7 @@
 
                 <div class="form-group mb-3">
                   <label class="col-form-label">Basic Salary</label>
-                  <input type="number" class="form-control shadow" formControlName="basicSalary" [(ngModel)]="employee.basicSalary" />
+                  <input type="text" class="form-control shadow" formControlName="basicSalary" [(ngModel)]="employee.basicSalary" />
                   <div *ngIf="f['basicSalary'].touched && f['basicSalary'].invalid" class="alert alert-danger mt-2">
                     <div *ngIf="f['basicSalary'].errors && f['basicSalary'].errors['required']">Basic Salary is required.</div>
                   </div>

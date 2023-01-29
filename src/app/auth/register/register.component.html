@@ -19,26 +19,46 @@
                       <div class="mb-3">
                         <label class="col-form-label">Fullname</label>
                         <input type="text" class="form-control shadow" formControlName="fullname" >
+
+                        <div *ngIf="f['fullname'].touched && f['fullname'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['fullname'].errors && f['fullname'].errors['required']">Full Name is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Username</label>
                         <input type="text" class="form-control shadow" formControlName="username" >
+
+                        <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Mobile</label>
                         <input type="number" class="form-control shadow" formControlName="mobile" >
+
+                        <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">Mobile is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Email</label>
                         <input type="email" class="form-control shadow" formControlName="email" >
+
+                        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Password</label>
                         <input type="password" class="form-control shadow" formControlName="password">
+
+                        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-4">

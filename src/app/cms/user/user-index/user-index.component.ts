@@ -10,6 +10,8 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class UserIndexComponent {
 
   users: UserModel[] = [];
+  fullname: any;
+  p:number = 1;
 
   constructor(public userService: UserService){}
 
@@ -22,9 +24,27 @@ export class UserIndexComponent {
 
   deleteUser(id:number){
     this.userService.delete(id).subscribe(res => {
-         this.users = this.users.filter(item => item.id !== id);
-         console.log('User deleted successfully!');
+        this.users = this.users.filter(item => item.id !== id);
+        alert("User deleted successfully!");
+        console.log('User deleted successfully!');
     })
+  }
+
+  Search(){
+    if(this.fullname == ""){
+      this.ngOnInit();
+    }else{
+      this.users =  this.users.filter(res =>{
+        return res.fullname.toLocaleLowerCase().match(this.fullname.toLocaleLowerCase())
+      })
+    }
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 }

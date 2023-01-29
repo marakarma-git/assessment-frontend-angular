@@ -12,6 +12,8 @@ export class EmployeeIndexComponent {
   employees: EmployeeModel[] = [];
   firstName: any;
   p:number = 1;
+  key: string = 'id';
+  reverse: boolean = false;
 
   constructor(public employeeService: EmployeeService){}
 
@@ -25,6 +27,7 @@ export class EmployeeIndexComponent {
 
   deleteEmployee(id:number){
     this.employeeService.delete(id).subscribe(res => {
+         alert('Employe deleted successfully!');
          this.employees = this.employees.filter(item => item.id !== id);
          console.log('Employe deleted successfully!');
     })
@@ -40,8 +43,6 @@ export class EmployeeIndexComponent {
     }
   }
 
-  key: string = 'id';
-  reverse: boolean = false;
   sort(key: string) {
     this.key = key;
     this.reverse = !this.reverse;

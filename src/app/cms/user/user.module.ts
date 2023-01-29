@@ -10,6 +10,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
   {
@@ -18,6 +21,7 @@ const routes: Routes = [
     children:[
       {path:'user/index',component:UserIndexComponent},
       {path:'user/create',component:UserCreateComponent},
+      {path:'user/:id/update',component:UserUpdateComponent},
 
     ]
   }
@@ -38,7 +42,10 @@ const routes: Routes = [
     FormsModule,
     BrowserModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ]
 })
 export class UserModule { }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { EmployeeComponent } from './employee.component';
 import { EmployeeUpdateComponent } from './employee-update/employee-update.component';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
@@ -23,8 +23,8 @@ const routes : Routes = [
     children:[
       {path:'employee/index', component:EmployeeIndexComponent},
       {path:'employee/create', component:EmployeeCreateComponent},
-      {path:'employee/:employeeId/update', component:EmployeeUpdateComponent},
-      {path:'employee/:employeeId/detail', component:EmployeeDetailComponent}
+      {path:'employee/:id/update', component:EmployeeUpdateComponent},
+      {path:'employee/:id/detail', component:EmployeeDetailComponent}
     ]
   }
 ]
@@ -47,7 +47,11 @@ const routes : Routes = [
     SharedModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CurrencyPipe
+  ],
+  providers:[
+    CurrencyPipe
   ]
 })
 export class EmployeeModule { }

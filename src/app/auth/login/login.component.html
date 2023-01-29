@@ -19,11 +19,19 @@
                       <div class="mb-3">
                         <label class="col-form-label">Email</label>
                         <input type="email" class="form-control shadow" formControlName="email" >
+
+                        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Password</label>
                         <input type="password" class="form-control shadow" formControlName="password">
+
+                        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger mt-2">
+                          <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                        </div>
                       </div>
 
                       <div class="mb-4">
