@@ -1,86 +1,89 @@
 <section>
 
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Employee</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Overview</li>
+  <nav aria-label="breadcrumb shadow">
+    <ol class="breadcrumb d-flex justify-content-between">
+      <div class="mb-0">
+        <p class="h2" style="color: #6610f2">Employees</p>
+      </div>
+      <div class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/employee/index">Employee</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+      </div>
     </ol>
   </nav>
 
+  <div class="container-fluid">
 
-  <div class="row">
-    <div class="card shadow">
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-          <div>
-            <p class="h3 mb-0">Employee</p>
-          </div>
-          <div>
-            <a class="btn btn-purple" [routerLink]="['/employee/create']"><i class="fa-solid fa-plus"></i> Add Emnployee</a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row my-4">
-    <div class="card shadow-lg">
-      <div class="card-header">
-
-        <div class="col-lg-3">
-          <div class="form-group has-search">
-            <span class="fa fa-search form-control-feedback" style="color: #6610f2;"></span>
-            <input type="search" class="form-control" autofocus name="firstName" [(ngModel)]="firstName"  (ngModelChange)="Search()" placeholder="Enter FirstName To Search">
-          </div>
-        </div>
-
-      </div>
-      <div class="card-body">
-        <table  class="table table-hover">
-          <thead>
-          <tr>
-            <th (click)="sort('id')">No &nbsp; <i class="fa fa-sort"></i> </th>
-            <th (click)="sort('username')">Username &nbsp; <i class="fa fa-sort"></i> </th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>BirtDate</th>
-            <th>Basic Salary</th>
-            <th>Status</th>
-            <th>Group</th>
-            <th>Description</th>
-            <th>Option</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let employee of employees | orderBy: key: reverse | paginate: {itemsPerPage:5, currentPage:p}" >
-            <td>{{employee.id }}</td>
-            <td>{{employee.username }}</td>
-            <td>{{employee.firstName }}</td>
-            <td>{{employee.lastName }}</td>
-            <td>{{employee.email }}</td>
-            <td>{{employee.birthDate }}</td>
-            <td>{{employee.basicSalary }}</td>
-            <td>{{employee.status }}</td>
-            <td>{{employee.group }}</td>
-            <td>{{employee.description }}</td>
-            <td>
-              <a class="btn btn-sm mr-2 text-success shadow" href="#" [routerLink]="['/employee/', employee.id, 'detail']"><i class="fa-solid fa-circle-info"></i></a>
-              <a class="btn btn-sm mr-2 text-info shadow" href="#" [routerLink]="['/employee/', employee.id, 'update']"><i class="fa-solid fa-pen-to-square"></i></a>
-              <button type="button" class="btn btn-sm text-danger shadow" (click)="deleteEmployee(employee.id)"><i class="fa-solid fa-trash"></i></button>
-            </td>
-          </tr>
-
-          </tbody>
-
-            <div class="row">
-              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div class="row mb-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="col-lg-3">
+              <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback" style="color: #6610f2;"></span>
+                <input type="search" class="form-control" autofocus name="firstName" [(ngModel)]="firstName"  (ngModelChange)="Search()" placeholder="Enter FirstName To Search">
+              </div>
+            </div>
+            <div>
+              <a class="btn btn-purple" [routerLink]="['/employee/create']"><i class="fa-solid fa-plus"></i> Add Employee</a>
             </div>
 
-        </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <table  class="table table-hover">
+            <thead>
+            <tr>
+              <th (click)="sort('id')">No &nbsp; <i class="fa fa-sort"></i> </th>
+              <th (click)="sort('username')">Username &nbsp; <i class="fa fa-sort"></i> </th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>BirtDate</th>
+              <th>Basic Salary</th>
+              <th>Status</th>
+              <th>Group</th>
+              <th>Description</th>
+              <th>Option</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let employee of employees | orderBy: key: reverse | paginate: {itemsPerPage:5, currentPage:p}" >
+              <td>{{employee.id }}</td>
+              <td>{{employee.username }}</td>
+              <td>{{employee.firstName }}</td>
+              <td>{{employee.lastName }}</td>
+              <td>{{employee.email }}</td>
+              <td>{{employee.birthDate }}</td>
+              <td>{{employee.basicSalary }}</td>
+              <td>{{employee.status }}</td>
+              <td>{{employee.group }}</td>
+              <td>{{employee.description }}</td>
+              <td>
+                <a class="btn btn-sm mr-2 text-success shadow" href="#" [routerLink]="['/employee/', employee.id, 'detail']"><i class="fa-solid fa-circle-info"></i></a>
+                <a class="btn btn-sm mr-2 text-info shadow" href="#" [routerLink]="['/employee/', employee.id, 'update']"><i class="fa-solid fa-pen-to-square"></i></a>
+                <button type="button" class="btn btn-sm text-danger shadow" (click)="deleteEmployee(employee.id)"><i class="fa-solid fa-trash"></i></button>
+              </td>
+            </tr>
+
+            </tbody>
+
+              <div class="row">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+
+          </table>
+
+        </div>
 
       </div>
     </div>
+
   </div>
+
 </section>

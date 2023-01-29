@@ -13,17 +13,22 @@
                     </div>
                   </div>
                   <div class="col-lg-4">
-                    <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
-                    <form >
+                    <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
 
                       <div class="mb-3">
                         <label class="col-form-label">Fullname</label>
-                        <input type="email" class="form-control shadow" formControlName="email" >
+                        <input type="text" class="form-control shadow" formControlName="fullname" >
                       </div>
 
                       <div class="mb-3">
                         <label class="col-form-label">Username</label>
-                        <input type="email" class="form-control shadow" formControlName="email" >
+                        <input type="text" class="form-control shadow" formControlName="username" >
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="col-form-label">Mobile</label>
+                        <input type="number" class="form-control shadow" formControlName="mobile" >
                       </div>
 
                       <div class="mb-3">
@@ -37,8 +42,8 @@
                       </div>
 
                       <div class="mb-4">
-                        <button type="button" class="btn btn-purple btn-block" [routerLink]="['/dashboard/chart']">
-                          Login
+                        <button type="submit" class="btn btn-purple btn-block" [disabled]="!registerForm.valid">
+                          Register
                         </button>
                       </div>
 

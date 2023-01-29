@@ -15,6 +15,14 @@
       "email": "admin@gmail.com",
       "password": "12345",
       "id": 2
+    },
+    {
+      "fullname": "Rini Perdana",
+      "username": "riniperdana",
+      "mobile": 81217483285,
+      "email": "rini@gmail.com",
+      "password": "12345",
+      "id": 3
     }
   ],
   "employees": [
@@ -80,7 +88,7 @@
       "colorcode": "pink"
     }
   ],
-  "group":[
+  "group": [
     {
       "id": 1,
       "groupname": "Project Manager"
@@ -106,8 +114,7 @@
       "groupname": "General Affair"
     }
   ],
-
-  "status":[
+  "status": [
     {
       "id": 1,
       "statusName": "Contract"
@@ -119,6 +126,43 @@
     {
       "id": 3,
       "statusName": "Freelance"
+    }
+  ],
+  "employeeQuantity": [
+    {
+      "year": 2017,
+      "amount": 100,
+      "colorcode": "green"
+    },
+    {
+      "year": 2018,
+      "amount": 200,
+      "colorcode": "yellow"
+    },
+    {
+      "year": 2019,
+      "amount": 300,
+      "colorcode": "red"
+    },
+    {
+      "year": 2020,
+      "amount": 400,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2021,
+      "amount": 500,
+      "colorcode": "grey"
+    },
+    {
+      "year": 2022,
+      "amount": 600,
+      "colorcode": "orange"
+    },
+    {
+      "year": 2023,
+      "amount": 700,
+      "colorcode": "pink"
     }
   ]
 }

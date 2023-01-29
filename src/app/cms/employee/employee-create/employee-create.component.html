@@ -1,133 +1,130 @@
 <section>
 
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Users</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Create</li>
+  <nav aria-label="breadcrumb shadow">
+    <ol class="breadcrumb d-flex justify-content-between">
+      <div class="mb-0">
+        <p class="h2" style="color: #6610f2">Employees</p>
+      </div>
+      <div class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/employee/index">Employee</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create</li>
+      </div>
     </ol>
   </nav>
+  <div class="container-fluid">
 
+    <div class="row my-4">
+      <div class="card shadow-lg">
+        <div class="card-body">
 
-  <div class="row">
-    <div class="card shadow">
-      <div class="card-body">
-        <div class="d-flex justify-content-start">
-          <div>
-            <p class="h3 mb-0">Employee</p>
-          </div>
+          <form class="form-horizontal" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Username</label>
+                  <input type="text" class="form-control shadow" formControlName="username"/>
+                  <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">First Name</label>
+                  <input type="text" class="form-control shadow" formControlName="firstName"/>
+                  <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">First Name is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Last Name</label>
+                  <input type="text" class="form-control shadow" formControlName="lastName"/>
+                  <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Email</label>
+                  <input type="email" class="form-control shadow" formControlName="email"/>
+                  <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Birthdate</label>
+                  <input type="date" class="form-control shadow" formControlName="birthDate"/>
+                  <div *ngIf="f['birthDate'].touched && f['birthDate'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['birthDate'].errors && f['birthDate'].errors['required']">Birthdate is required.</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-6 mb-3">
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Basic Salary</label>
+                  <input type="number" class="form-control shadow" formControlName="basicSalary"/>
+                  <div *ngIf="f['basicSalary'].touched && f['basicSalary'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['basicSalary'].errors && f['basicSalary'].errors['required']">Basic Salary is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Status</label>
+                  <select class="form-select shadow" aria-label="select" formControlName="status" (change)="changeStatus($event)">
+                    <option>Select</option>
+                    <option [value]="status.statusName" *ngFor="let status of statusList">
+                      {{ status.statusName }}
+                    </option>
+                  </select>
+
+                  <div *ngIf="f['status'].touched && f['status'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['status'].errors && f['status'].errors['required']">Status is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Group</label>
+                  <select class="form-select shadow" aria-label="select" formControlName="group" (change)="changeGroup($event)">
+                    <option>Select</option>
+                    <option [value]="group.groupname" *ngFor="let group of groupList">
+                      {{ group.groupname }}
+                    </option>
+
+                  </select>
+
+                  <div *ngIf="f['group'].touched && f['group'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['group'].errors && f['group'].errors['required']">Group is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="col-form-label">Description</label>
+                  <input type="text" class="form-control shadow" formControlName="description"/>
+
+                  <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger mt-2">
+                    <div *ngIf="f['description'].errors && f['description'].errors['required']">Description is required.</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-purple mr-2" [disabled]="!form.valid"><i class="fa-solid fa-floppy-disk"></i> Submit</button>
+              <button type="reset" class="btn btn-info mr-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+              <a type="button" class="btn btn-danger" href="/employee/index"><i class="fa-solid fa-xmark"></i> Cancel</a>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>
+
   </div>
 
-  <div class="row my-4">
-    <div class="card shadow-lg">
-      <div class="card-body">
 
-        <form class="form-horizontal" [formGroup]="form" (ngSubmit)="submit()">
-          <div class="row">
-            <div class="col-lg-6 mb-3">
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Username</label>
-                <input type="text" class="form-control shadow" formControlName="username"/>
-                <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">First Name</label>
-                <input type="text" class="form-control shadow" formControlName="firstName"/>
-                <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">First Name is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Last Name</label>
-                <input type="text" class="form-control shadow" formControlName="lastName"/>
-                <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Email</label>
-                <input type="email" class="form-control shadow" formControlName="email"/>
-                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Birthdate</label>
-                <input type="date" class="form-control shadow" formControlName="birthDate"/>
-                <div *ngIf="f['birthDate'].touched && f['birthDate'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['birthDate'].errors && f['birthDate'].errors['required']">Birthdate is required.</div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6 mb-3">
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Basic Salary</label>
-                <input type="number" class="form-control shadow" formControlName="basicSalary"/>
-                <div *ngIf="f['basicSalary'].touched && f['basicSalary'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['basicSalary'].errors && f['basicSalary'].errors['required']">Basic Salary is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Status</label>
-                <select class="form-select shadow" aria-label="select" formControlName="status" (change)="changeStatus($event)">
-                  <option>Select</option>
-                  <option [value]="status.statusName" *ngFor="let status of statusList">
-                    {{ status.statusName }}
-                  </option>
-                </select>
-
-                <div *ngIf="f['status'].touched && f['status'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['status'].errors && f['status'].errors['required']">Status is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Group</label>
-                <select class="form-select shadow" aria-label="select" formControlName="group" (change)="changeGroup($event)">
-                  <option>Select</option>
-                  <option [value]="group.groupname" *ngFor="let group of groupList">
-                    {{ group.groupname }}
-                  </option>
-
-                </select>
-
-                <div *ngIf="f['group'].touched && f['group'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['group'].errors && f['group'].errors['required']">Group is required.</div>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="col-form-label">Description</label>
-                <input type="text" class="form-control shadow" formControlName="description"/>
-
-                <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger mt-2">
-                  <div *ngIf="f['description'].errors && f['description'].errors['required']">Description is required.</div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary mr-2" [disabled]="!form.valid">Submit</button>
-            <button type="reset" class="btn btn-primary mr-2">Reset</button>
-            <a type="button" class="btn btn-primary" href="/employee/index">Cancel</a>
-          </div>
-        </form>
-
-      </div>
-    </div>
-  </div>
 </section>

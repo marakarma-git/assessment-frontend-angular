@@ -21,7 +21,7 @@ export class DashboardChartComponent {
     colordata: any[] = [];
 
   ngOnInit(): void {
-    this.service.Getchartinfo().subscribe(result => {
+    this.service.getEmployeeQuantity().subscribe(result => {
       this.chartdata = result;
       if(this.chartdata!=null){
         for(let i=0; i<this.chartdata.length ;i++){

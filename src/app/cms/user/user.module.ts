@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
     UserComponent,
     UserDetailComponent,
     UserIndexComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserUpdateComponent
   ],
   imports: [
     CommonModule,

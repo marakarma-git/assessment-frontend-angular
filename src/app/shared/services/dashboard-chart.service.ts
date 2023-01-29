@@ -13,4 +13,8 @@ export class DashboardChartService {
   Getchartinfo(){
     return this.http.get("http://localhost:3000/sales");
   }
+
+  getEmployeeQuantity(){
+    return this.http.get("http://localhost:3000/employeeQuantity")
+  }
 }
