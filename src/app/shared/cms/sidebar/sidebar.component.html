@@ -1,0 +1,67 @@
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse shadow">
+  <div class="position-sticky">
+      <ul class="nav flex-column">
+          <li class="nav-item">
+
+            <a class="nav-link " aria-current="page"  [routerLink]="['/dashboard/chart']" [routerLinkActive]="['active']">
+              <i class="fa-solid fa-house"></i>
+              <span class="ml-2"> Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/employee/index']" [routerLinkActive]="['active']">
+              <i class="fa-solid fa-user-tie"></i>
+              <span class="ml-2"> Employees</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/user/index']" [routerLinkActive]="['active']">
+              <i class="fa-solid fa-user-plus"></i>
+              <span class="ml-2"> Users</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['#']" [routerLinkActive]="['active']">
+              <i class="fa-solid fa-folder"></i>
+              <span class="ml-2"> Data Master</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+              <a class="nav-link ml-3 mt-2" [routerLink]="['https://marakarma.site/portfolio']">
+                <i class="fa-solid fa-circle text-success"></i>
+                 <span class="ml-2">Portfolio</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link ml-3" [routerLink]="['https://marakarma.site/portfolio']">
+                <i class="fa-solid fa-circle text-primary"></i>
+                 <span class="ml-2">Mara Karma</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link ml-3" [routerLink]="['https://marakarma.site/portfolio']">
+                <i class="fa-solid fa-circle text-warning"></i>
+                 <span class="ml-2">Contact</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link ml-3" [routerLink]="['https://marakarma.site/portfolio']">
+                <i class="fa-solid fa-circle text-danger"></i>
+                 <span class="ml-2">Project</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link ml-3" [routerLink]="['https://marakarma.site/portfolio']">
+                <i class="fa-solid fa-circle text-secondary"></i>
+                 <span class="ml-2">Resume</span>
+              </a>
+          </li>
+
+
+        </ul>
+  </div>
+</nav>
